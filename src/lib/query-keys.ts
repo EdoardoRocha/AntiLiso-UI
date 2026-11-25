@@ -1,0 +1,10 @@
+export const AUTH_ME_QUERY_KEY = ['auth', 'me'] as const;
+export const ACCOUNTS_QUERY_KEY = ['accounts'] as const;
+export const TRANSACTIONS_QUERY_KEY = ['transactions'] as const;
+export const RECURRENCES_QUERY_KEY = ['recurrences'] as const;
+export const CREDIT_CARDS_QUERY_KEY = ['credit-cards'] as const;
+export const RESERVE_QUERY_KEY = ['reserve'] as const;
+export const SAFE_TO_SPEND_QUERY_KEY = ['safe-to-spend'] as const;
+export const IMPORTS_QUERY_KEY = ['imports'] as const;
+export const INVESTMENTS_QUERY_KEY = ['investments'] as const;
+export const ALERTS_QUERY_KEY = ['alerts'] as const;
