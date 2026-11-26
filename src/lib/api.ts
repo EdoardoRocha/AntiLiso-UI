@@ -42,7 +42,17 @@ import type {
   UserProfile,
 } from '@/types/api';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3333';
+export const API_PROXY_PREFIX = '/api-backend';
+
+function resolveClientApiBaseUrl(): string {
+  if (process.env.NEXT_PUBLIC_DIRECT_API === 'true' && process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL.trim().replace(/\/+$/, '');
+  }
+
+  return API_PROXY_PREFIX;
+}
+
+const API_BASE_URL = resolveClientApiBaseUrl();
 
 const AUTH_BYPASS_REFRESH_PATHS = new Set([
   '/auth/login',
